@@ -23,7 +23,7 @@ jobs:
 
       # Etapa 3: Executar Testes - deve vir depois de npm install
       - name: Executar Testes Unitários
-        run: npx jest
+        run: npm test
 
       # Etapa 4: Etapa de Build (simulada)
       - name: Etapa de Build
