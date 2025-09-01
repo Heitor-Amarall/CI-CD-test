@@ -1,0 +1,35 @@
+# .github/workflows/ci-cd.yml
+
+name: Pipeline CI/CD com GitHub Actions
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # Etapa 1: Checkout do código
+      - name: Checkout do Repositório
+        uses: actions/checkout@v4
+
+      # Etapa 2: Instalação de Dependências
+      - name: Instalação de Dependências Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm install
+
+      # Etapa 3: Executar Testes
+      - name: Executar Testes Unitários
+        run: npm test
+
+      # Etapa 4: Etapa de Build (simulada)
+      - name: Etapa de Build
+        run: echo "Simulando a etapa de build. Os arquivos estáticos estariam sendo gerados aqui."
+
+      # Etapa 5: Etapa de Deploy (simulada)
+      - name: Etapa de Deploy
+        run: echo "Simulando a etapa de deploy para produção. O código estaria sendo enviado para um servidor."
