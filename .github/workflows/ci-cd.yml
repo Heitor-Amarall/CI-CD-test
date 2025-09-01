@@ -11,7 +11,6 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      # Etapa 1: Checkout do código
       - name: Checkout do Repositório
         uses: actions/checkout@v4
 
@@ -22,7 +21,7 @@ jobs:
           node-version: '20'
       - run: npm install
 
-      # Etapa 3: Executar Testes
+      # Etapa 3: Executar Testes - deve vir depois de npm install
       - name: Executar Testes Unitários
         run: npx jest
 
