@@ -21,6 +21,10 @@ jobs:
           node-version: '20'
       - run: npm install
 
+        # Nova Etapa: Conceder Permissão de Execução ao Jest
+      - name: Conceder Permissão de Execução
+        run: chmod +x ./node_modules/.bin/jest
+
       # Etapa 3: Executar Testes - deve vir depois de npm install
       - name: Executar Testes Unitários
         run: npm test
