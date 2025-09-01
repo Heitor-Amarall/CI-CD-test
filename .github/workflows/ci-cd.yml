@@ -24,7 +24,7 @@ jobs:
 
       # Etapa 3: Executar Testes
       - name: Executar Testes Unitários
-        run: npm test
+        run: npx jest
 
       # Etapa 4: Etapa de Build (simulada)
       - name: Etapa de Build
